@@ -11,11 +11,11 @@ defmodule Geom do
   end
 
   defp area(shape, dimension_1, dimension_2) when dimension_1 >= 0 and dimension_2 >= 0 do
-    case {shape} do
-      {:rectangle} -> dimension_1 * dimension_2
-      {:triangle} -> dimension_1 * dimension_2 / 2.0
-      {:ellipse} -> :math.pi() * dimension_1 * dimension_2
-      other -> 0
+    case shape do
+      :rectangle -> dimension_1 * dimension_2
+      :triangle  -> dimension_1 * dimension_2 / 2.0
+      :ellipse   -> :math.pi() * dimension_1 * dimension_2
+      true       -> 0
     end
   end
 
